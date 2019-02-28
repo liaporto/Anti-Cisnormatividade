@@ -1,0 +1,30 @@
+{
+    "manifest_version": 2,
+    "name": "Anti Cisnormatividade",
+    "description": "Extensão que substitui termos cisnormativos.",
+    "version": "1.0.0",
+    "icons": {
+        "128": "128.png",
+        "16": "16.png",
+        "48": "48.png"
+    },
+    "browser_action": {
+          "default_icon": {                    
+            "16": "16.png"
+          }
+      },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*/*"
+            ],
+            "js": [
+                "try.js"
+            ],
+            "run_at": "document_end"
+        }
+    ],
+
+    "permissions": ["activeTab"]
+ 
+}
