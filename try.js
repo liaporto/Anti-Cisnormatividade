@@ -6,23 +6,58 @@ var cisterms = [
     "gineco",
     "menstruar",
     "tpm",
-    "menstruada"
+    "menstruada",
+    "menstruais",
+    "menstruam",
+    "anticoncepcional",
+    "vagina",
+    "vaginal",
+    "vaginais",
+    "cólica",
+    "cólicas",
+    "dismenorreia",
+    "fértil",
+    "ginecologista",
+    "óvulos",
+    "fecundação",
+    "íntima",
+    "gravidez",
+    "ciclo",
+    "absorvente",
+    "OB",
+    "copinho"
 ];
 
 var wrongterms = [
     /mulheres/gi,
     /mulher/gi,
+    /garotas/gi,
+    /garota/gi,
+    /meninas/gi,
     /menina/gi,
-    /feminino/gi,
-    /menstruada/gi
+    /feminino/gi,   
+    /feminina/gi,    
+    /femininos/gi,
+    /femininas/gi,
+    /menstruada/gi,
+    /amiga/gi
+    
 ]
 
 var rightterms = [
     "pessoas",
     "pessoa",
+    "pessoas",
+    "pessoa",
+    "crianças",
     "criança",
     "",
-    "menstruade"
+    "",
+    "",
+    "",
+    "menstruade",
+    "amigue"
+    
 ]
 
 var re = new RegExp(cisterms.join('|'), "gi");
@@ -33,7 +68,7 @@ for (var i = 0; i < elements.length; i++) {
 
     for (var j = 0; j < element.childNodes.length; j++) {
         var node = element.childNodes[j];
-       // if (node.nodeType === 3) {
+        
            var text = node.nodeValue;
            var replaceText = text;
    
@@ -59,6 +94,6 @@ for (var i = 0; i < elements.length; i++) {
             }
 
             
-        //}
+        
     }
  }
