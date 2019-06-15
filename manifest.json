@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "Anti Cisnormatividade",
     "description": "Extensão que substitui termos cisnormativos.",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "icons": {
         "128": "128.png",
         "16": "16.png",

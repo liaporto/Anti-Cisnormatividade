@@ -1,6 +1,6 @@
+let elements = document.querySelectorAll('*');
 
-var elements = document.getElementsByTagName('*');
-var cisterms = [
+let cisterms = [
     "menstruação",
     "menstrual",
     "gineco",
@@ -24,27 +24,29 @@ var cisterms = [
     "gravidez",
     "ciclo",
     "absorvente",
+    "doenças",
+    "doença",
     "OB",
     "copinho"
 ];
 
-var wrongterms = [
+let wrongterms = [
     /mulheres/gi,
     /mulher/gi,
     /garotas/gi,
     /garota/gi,
     /meninas/gi,
     /menina/gi,
-    /feminino/gi,   
-    /feminina/gi,    
+    /feminino/gi,
+    /feminina/gi,
     /femininos/gi,
     /femininas/gi,
     /menstruada/gi,
     /amiga/gi
-    
+
 ]
 
-var rightterms = [
+let rightterms = [
     "pessoas",
     "pessoa",
     "pessoas",
@@ -57,43 +59,94 @@ var rightterms = [
     "",
     "menstruade",
     "amigue"
-    
+
 ]
 
-var re = new RegExp(cisterms.join('|'), "gi");
+let re = new RegExp(cisterms.join('|'), "gi");
 
 
-for (var i = 0; i < elements.length; i++) {
-    var element = elements[i];
 
-    for (var j = 0; j < element.childNodes.length; j++) {
-        var node = element.childNodes[j];
-        
-           var text = node.nodeValue;
-           var replaceText = text;
-   
-           if(re.test(text)) {
+for (let i = 0; i < elements.length; i++) {
 
-                    var replaceF = '';
-                    for(var k = 0; k<wrongterms.length; k++)
-                    {
-                        replaceF = replaceF + '.replace(wrongterms['+k+'], rightterms['+k+'])';
-                    }
+    let element = elements[i];
+    let nextnd = false;
+
+    for (let j = 0; j < element.childNodes.length; j++) {
+
+        let node = element.childNodes[j];
+        let text = '';
+    
+        if (node.nodeType == 3) {
+
+            text = node.nodeValue;
+
+            if (re.test(text) || nextnd){
+ 
+                if(re.test(text) && nextnd){
+                    nextnd = true;
+                }
+                else if(re.test(text)){
+                    nextnd=true;
+                }
+                else if(nextnd){
+                    nextnd=false;
+                }
+
+                let replaceF = '';
+
+                for (let k = 0; k < wrongterms.length; k++) {
+                    replaceF = replaceF + '.replace(wrongterms[' + k + '], rightterms[' + k + '])';
+                }
 
 
-                    var command = 'text'+replaceF;
+                let command = 'text' + replaceF;
 
-                    replacedText = eval(command);
-                    
-                    if (replacedText !== text) {
-                        element.replaceChild(document.createTextNode(replacedText), node);
-                    }
+                let replacedText = eval(command);
 
-               
-            	
+                if (replacedText !== text) {
+                    element.replaceChild(document.createTextNode(replacedText), node);
+                }
+
             }
+        }
 
-            
-        
+        else if (node.nodeName == "STRONG" || node.nodeName == "#strong" || node.nodeName == "#em" || node.nodeName == "EM") {
+
+            text = node.textContent;
+
+            if (re.test(text)) {
+
+                if(re.test(text) && nextnd){
+                    nextnd = true;
+                }
+                else if(re.test(text)){
+                    nextnd=true;
+                }
+                else if(nextnd){
+                    nextnd=false;
+                }
+
+                let replaceF = '';
+
+                for (let k = 0; k < wrongterms.length; k++) {
+                    replaceF = replaceF + '.replace(wrongterms[' + k + '], rightterms[' + k + '])';
+                }
+
+                let command = 'text' + replaceF;
+
+                let replacedText = eval(command);
+
+                if (replacedText !== text) {
+                    element.replaceChild(document.createTextNode(replacedText), node);
+                }
+
+
+            }
+          
+        }
     }
- }
+
+}
+
+
+
