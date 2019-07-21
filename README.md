@@ -7,7 +7,6 @@ Esta versão se foca exclusivamente em termos relacionados a menstruação e ao 
 
 <img src="https://i.ibb.co/pfJxQfC/screenshot.png" alt="screenshot" border="0"><br /><br />
 
-
 ## Como instalar
 
 Para instalar, ative o modo de desenvolvedor em chrome://extensions e arraste o arquivo .zip diretamente para a janela do navegador, ou siga esse link: https://chrome.google.com/webstore/detail/anti-cisnormatividade/cbblpjopaainmpfbipgpngkibanfgjkb
