@@ -6,7 +6,7 @@ let cisterms = [
     "gineco",
     "menstruar",
     "tpm",
-    "menstruada",
+    "menstruade",
     "menstruais",
     "menstruam",
     "anticoncepcional",
@@ -24,25 +24,23 @@ let cisterms = [
     "gravidez",
     "ciclo",
     "absorvente",
-    "doenças",
-    "doença",
     "OB",
     "copinho"
 ];
 
 let wrongterms = [
-    /mulheres/gi,
-    /mulher/gi,
-    /garotas/gi,
-    /garota/gi,
-    /meninas/gi,
-    /menina/gi,
-    /feminino/gi,
-    /feminina/gi,
-    /femininos/gi,
-    /femininas/gi,
-    /menstruada/gi,
-    /amiga/gi
+    /pessoas/gi,
+    /pessoa/gi,
+    /pessoas/gi,
+    /pessoa/gi,
+    /crianças/gi,
+    /criança/gi,
+    //gi,
+    //gi,
+    /s/gi,
+    /s/gi,
+    /menstruade/gi,
+    /amigue/gi
 
 ]
 
