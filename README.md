@@ -1,4 +1,4 @@
-# trans-auto-corrector
+# trans-auto-correct
 
 ## O que é?
 
