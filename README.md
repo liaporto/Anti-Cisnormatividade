@@ -1,4 +1,4 @@
-# Anti-Cisnormatividade
+# trans-auto-corrector
 
 ## O que é?
 
